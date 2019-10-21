@@ -1,0 +1,70 @@
+
+
+.page-backdrop {
+    background-image: url("https://66.media.tumblr.com/05a5f478267f50074384755c56b16aff/tumblr_nkrv7d5uq11s4fz4bo1_250.gifv");
+    background-size: 100%;
+    background-position-y: center;
+}
+
+.text-content {
+    text-align: center;
+    padding-top: 10%;
+    color: #000000;
+<<<<<<< HEAD
+    text-shadow: 2px 2px #ff0000;
+=======
+    text-shadow: 2px 2px red;
+>>>>>>> 01f388ef6328d5351e4e4018358fffe542d57f87
+}
+
+.container {
+    padding-right: 25%;
+    padding-left: 25%;
+}
+
+.container1 {
+    background-color: #0c3a9c;
+    padding: 1%;
+    border-width:5px;  
+    border-style:double;
+}
+
+.form-group {
+    padding-right: 2%;
+    padding-left: 2%;
+    height: 45px;
+
+}
+
+.form-control {
+    background-color: lightgray;
+    border-color: lightgray;
+
+}
+
+.form-group-form-check {
+    padding-left: 7%;
+    padding-top: 2%;
+    height: 5px;
+    color: lightgrey;
+}
+
+.submitButton {
+    text-align: center;
+    padding: 2%;
+
+}
+
+.labels-text {
+    height: 10px;
+    color: lightgrey;
+}
+.logoutButton{
+	text-align: center;
+	 padding: 10%;
+}
+.goToForm{
+	text-align: center;
+	padding: 10%;
+	
+}

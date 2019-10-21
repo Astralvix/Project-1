@@ -1,0 +1,83 @@
+label {
+    display: block;
+    font: 1rem 'Fira Sans', sans-serif;
+}
+
+input,
+label {
+    margin: .4rem 0;
+}
+
+.page-backdrop {
+    background-image: url("https://66.media.tumblr.com/354ac1b53f8ec87f7bc5404e45a202a2/tumblr_osmohynVux1vtnv5po1_540.gifv");
+    background-size: 100%;
+    background-position-y: center;
+}
+
+#descriptionText {
+    color: gold;
+    background-color: transparent;
+    border-color: rgba(27, 151, 223, 0.5);
+}
+
+textarea {
+    color: gold;
+}
+
+.page-texts {
+    color: #09d4eb;
+    text-shadow: 2px 2px black;
+}
+
+.input-box {
+    color: gold;
+    background-color: transparent;
+    border-color: rgba(27, 151, 223, 0.5);;
+    width: 100%;
+}
+
+.date-box {
+    color: gold;
+    background-color: transparent;
+    border-color: rgba(27, 151, 223, 0.5);;
+    width: 15%;
+}
+
+/* placeholder CSS */
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: gold;
+    opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: gold;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: gold;
+  }
+
+  /* textarea placeholder CSS */
+
+  /* none of this works to change the textarea placeholder text color for some reason...
+  textarea::-webkit-input-placeholder {
+    color: gold;
+  }
+  
+  textarea:-moz-placeholder { Firefox 18-
+    color: gold;  
+  }
+  
+  textarea::-moz-placeholder {  Firefox 19+
+    color: gold;  
+  }
+  
+  textarea:-ms-input-placeholder {
+    color: gold;  
+  }
+  
+  textarea::placeholder {
+    color: gold;  
+  }
+  */

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Employee Reimbursement Form</title>
+    <link rel='stylesheet' type='text/css' media='screen' href='mainERF.css'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body class="page-backdrop">
+    <div class="container">
+        <form action="formSubmit" method="GET">
+           <div class="form-group">
+                  <label class="page-texts" for="fullname">Full Name</label>
+                  <input class="input-box" type="text" name="fullName" class="form-control" id="fullname" placeholder="Enter Full Name" required>
+                </div>
+                <div class="form-group">
+                    <label class="page-texts" for="location">Location</label>
+                    <input class="input-box" type="text" name="location" class="form-control" id="location" placeholder="Enter Location" required>
+                  </div>
+                  <div class="form-group">
+                      <label class="page-texts" for="current">Current Date:</label>
+                      <input class="date-box" type="date" name="currentdate" id="current" required>
+                  </div>
+                  <div class="form-group">
+                      <label class="page-texts" for="start">Course Start Date:</label>
+                      <input class="date-box" type="date" name="coursestart" id="start" required>
+                    </div>
+                    <div class="form-group">
+                      <label class="page-texts" for="eventType">Event Type</label>
+                      <input class="input-box" type="text" name="event" class="form-control" id="eventType" placeholder="Enter Event Type (Course, Certification, etc...)" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="page-texts" for="descriptionText">Course Description</label>
+                        <textarea class="form-control" name="desc" id="descriptionText" rows="3" placeholder="" required>Enter Description</textarea>
+                      </div>
+                      <div class="form-group">
+                          <label class="page-texts" for="costAmount">Cost</label>
+                          <input class="input-box" type="number" name="cost" class="form-control" id="costAmount" placeholder="Enter Cost Amount (Without $)" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="page-texts" for="FormControlFile">Provide Certificate/Receipt</label>
+                            <input class="input-box" type="file" name="certifyFile" value="Browse" class="form-control-file" id="FormControlFile">
+                          </div>
+                          <div class="form-group">
+                              <label class="page-texts" for="inputgrade">Grade Criteria</label>
+                              <select class="input-box" id="inputgrade" name="grade" class="form-control" required>
+                                <option selected>Choose One</option>
+                                <option>100%-90%</option>
+                                <option>89%-80%</option>
+                                <option>79%-70%</option>
+                                <option>69%-60%</option>
+                                <option>59%-50%</option>
+                                <option>Pass/Fail</option>
+                              </select>
+                          </div>
+                          <div class="form-group">
+                            <label class="page-texts" for="passingGrade">Passing Percentage</label>
+                            <input class="input-box" type="text" name="passingScore" class="form-control" id="passingGrade" placeholder="Enter Grade" required>
+                          </div>
+        <input type="submit" value="Submit" class="btn btn-primary">
+      </form>
+    </div>
+</body>
+</html>
