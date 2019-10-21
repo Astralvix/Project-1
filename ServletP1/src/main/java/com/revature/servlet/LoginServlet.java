@@ -32,9 +32,9 @@ public class LoginServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession(false);
 		if(session != null){
-			response.sendRedirect("Home.html");
+			response.sendRedirect("home.html");
 		}else {
-			response.sendRedirect("LoginPage.html");
+			response.sendRedirect("loginPage.html");
 		}
 	}
 
@@ -51,10 +51,10 @@ public class LoginServlet extends HttpServlet {
 			System.out.println("Login Servlet");
 			session = request.getSession(true);
 			session.setAttribute("username", user.getUser());
-			response.sendRedirect("Home.html");	
+			response.sendRedirect("home.html");	
 		}
 		else {
-			response.sendRedirect("LoginPage.html");
+			response.sendRedirect("loginPage.html");
 		}
 	}
 
