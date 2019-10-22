@@ -35,6 +35,8 @@ public class FormSubmissionServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+    
+    //Creating/submitting a new form
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
@@ -91,6 +93,13 @@ public class FormSubmissionServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		/*
+		 * HttpSession session = request.getSession();
+		 * 
+		 * String loggedInAs;
+		 * 
+		 * loggedInAs = session.getAttribute("username").toString();
+		 */
 	}
 
 	/**

@@ -99,4 +99,14 @@
     <servlet-name>FormSubmissionServlet</servlet-name>
     <url-pattern>/formSubmit</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ViewForms</display-name>
+    <servlet-name>ViewForms</servlet-name>
+    <servlet-class>com.revature.servlet.ViewForms</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewForms</servlet-name>
+    <url-pattern>/ViewForms</url-pattern>
+  </servlet-mapping>
 </web-app>
