@@ -2,11 +2,15 @@ package com.revature.service;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
+import java.util.List;
 
+import com.revature.dao.ERFormDao;
+import com.revature.dao.ERFormDaoImpl;
 import com.revature.pojo.ERForm;
 
 public class FormServiceImpl implements FormService{
 
+	private static ERFormDao formDao = new ERFormDaoImpl();
 
 	@Override
 	public boolean checkDate(LocalDate currentDate, LocalDate courseStart) {
@@ -17,5 +21,13 @@ public class FormServiceImpl implements FormService{
 		return true;
 	}
 		return false;
+	}
+
+	@Override
+	public List<ERForm> myForms(String username) {
+		
+		return formDao.getMyForms(username);
 	}	
+	
+	
 }

@@ -35,6 +35,8 @@ public class FormSubmissionServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+    
+    //Creating/submitting a new form
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
@@ -75,7 +77,7 @@ public class FormSubmissionServlet extends HttpServlet {
 		if(check == true) {
 			System.out.println("There is a more than a week difference");
 			ERFD.createForm(form);
-			response.sendRedirect("Home.html");
+			response.sendRedirect("home.html");
 		}else {
 			System.out.println("There is less then a week difference");
 			response.sendRedirect("ERF.html");
@@ -91,6 +93,13 @@ public class FormSubmissionServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		/*
+		 * HttpSession session = request.getSession();
+		 * 
+		 * String loggedInAs;
+		 * 
+		 * loggedInAs = session.getAttribute("username").toString();
+		 */
 	}
 
 	/**
