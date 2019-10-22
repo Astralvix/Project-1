@@ -38,7 +38,8 @@ public class ViewForms extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		//IMPORTANT: leaves doGet method after a response is called.
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		
 		HttpSession session = request.getSession();
 		ObjectMapper om = new ObjectMapper();
@@ -50,8 +51,8 @@ public class ViewForms extends HttpServlet {
 		
 		response.getWriter().write(om.writeValueAsString(forms));
 		
-		RequestDispatcher rd = request.getRequestDispatcher("viewOwnedForms");
-		rd.forward(request, response);
+//		RequestDispatcher rd = request.getRequestDispatcher("viewOwnedForms");
+//		rd.forward(request, response);
 	}
 
 	/**

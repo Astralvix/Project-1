@@ -30,51 +30,50 @@ function createFormsList(forms) {
     
     //newTable.setAttribute("id", ("Form # " + increment));
 
-    let list = document.getElementById("retrievalInfo");
+    // let list = document.getElementById("retrievalInfo");
     
-    list.innerHTML="";
+    // list.innerHTML="";
     
     for (f of forms) {
-        let item = document.createElement("li");
-        item.innerHTML = f.userName;
-        list.appendChild(item);
+        // let item = document.createElement("li");
+        // item.innerHTML = f.userName;
+        // list.appendChild(item);
 
-        // let newTable = document.createElement(("Form # " + increment));
-        // let row = newTable.insertRow(0);
+        let newTable = document.createElement(("Form # " + increment));
+        let row = newTable.insertRow(0);
 
         
+        let cell0 = row.insertCell(0);
+        let cell1 = row.insertCell(1);
+        let cell2 = row.insertCell(2);
+        let cell3 = row.insertCell(3);
+        let cell4 = row.insertCell(4);
+        let cell5 = row.insertCell(5);
+        let cell6 = row.insertCell(6);
+        let cell7 = row.insertCell(7);
+        let cell8 = row.insertCell(8);
+        let cell9 = row.insertCell(9);
+        let cell10 = row.insertCell(10);
+        let cell11 = row.insertCell(11);
+        let cell12 = row.insertCell(12);
+        let cell13 = row.insertCell(13);
 
-        // let cell0 = row.insertCell(0);
-        // let cell1 = row.insertCell(1);
-        // let cell2 = row.insertCell(2);
-        // let cell3 = row.insertCell(3);
-        // let cell4 = row.insertCell(4);
-        // let cell5 = row.insertCell(5);
-        // let cell6 = row.insertCell(6);
-        // let cell7 = row.insertCell(7);
-        // let cell8 = row.insertCell(8);
-        // let cell9 = row.insertCell(9);
-        // let cell10 = row.insertCell(10);
-        // let cell11 = row.insertCell(11);
-        // let cell12 = row.insertCell(12);
-        // let cell13 = row.insertCell(13);
+        cell0.innerHTML = f.RID;
+        cell1.innerHTML = f.userName;
+        cell2.innerHTML = f.fullName;
+        cell3.innerHTML = f.theDate;
+        cell4.innerHTML = f.eventStartDate;
+        cell5.innerHTML = f.theLocation;
+        cell6.innerHTML = f.description;
+        cell7.innerHTML = f.theCost;
+        cell8.innerHTML = f.gradingFormat;
+        cell9.innerHTML = f.passingPercentage;
+        cell10.innerHTML = f.eventType;
+        cell11.innerHTML = f.reason;
+        cell12.innerHTML = f.fileName;
+        cell13.innerHTML = f.status;
 
-        // cell0.innerHTML = f.RID;
-        // cell1.innerHTML = f.userName;
-        // cell2.innerHTML = f.fullName;
-        // cell3.innerHTML = f.theDate;
-        // cell4.innerHTML = f.eventStartDate;
-        // cell5.innerHTML = f.theLocation;
-        // cell6.innerHTML = f.description;
-        // cell7.innerHTML = f.theCost;
-        // cell8.innerHTML = f.gradingFormat;
-        // cell9.innerHTML = f.passingPercentage;
-        // cell10.innerHTML = f.eventType;
-        // cell11.innerHTML = f.reason;
-        // cell12.innerHTML = f.fileName;
-        // cell13.innerHTML = f.status;
-
-        // increment++;
+        increment++;
     }
 
 }
