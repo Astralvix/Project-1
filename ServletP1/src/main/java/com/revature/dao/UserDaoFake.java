@@ -20,7 +20,7 @@ private Connection conn = ConnectionFactory.getConnection();
 
 	
 	public User getUser(String username) {
-	String sql = "select * from project1.users where username = ?;";
+	String sql = "select * from project1.users where username = ?";
 	PreparedStatement stmt;
 	User user = new User();
 	try {

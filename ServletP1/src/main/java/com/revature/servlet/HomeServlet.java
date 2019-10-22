@@ -16,7 +16,7 @@ import com.revature.pojo.WelcomeMsg;
  */
 public class HomeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    private static WelcomeDao WM = new WMDao();   
+    //private static WelcomeDao WM = new WMDao();   
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -30,10 +30,10 @@ public class HomeServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("In home servlet");
-		WelcomeMsg msg = WM.WM();
+		//WelcomeMsg msg = WM.WM();
 		HttpSession session = request.getSession();
 		//session.invalidate();
-		response.getWriter().write(msg.getWelcomeMsg() + session.getAttribute("username"));
+		//response.getWriter().write(msg.getWelcomeMsg() + session.getAttribute("username"));
 	}
 
 	/**

@@ -10,11 +10,7 @@
     text-align: center;
     padding-top: 10%;
     color: #000000;
-<<<<<<< HEAD
-    text-shadow: 2px 2px #ff0000;
-=======
     text-shadow: 2px 2px red;
->>>>>>> 01f388ef6328d5351e4e4018358fffe542d57f87
 }
 
 .container {
@@ -52,19 +48,9 @@
 .submitButton {
     text-align: center;
     padding: 2%;
-
 }
 
 .labels-text {
     height: 10px;
     color: lightgrey;
-}
-.logoutButton{
-	text-align: center;
-	 padding: 10%;
-}
-.goToForm{
-	text-align: center;
-	padding: 10%;
-	
 }
