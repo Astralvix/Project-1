@@ -22,25 +22,28 @@ class ReimbursementPojo {
 //let testf = new ReimbursementPojo("RID", "userName", "fullName", "theDate", "eventStartDate", "theLocation", "description", "theCost", "gradingFormat", "passingPercentage", "eventType", "reason", "fileName", "status");
 function createFormsList(forms) {
 
-    let increment = 0;
+	//let increment = 0;
 
-    //let tables = new document.getElementById("tables");
+    //let tables = document.getElementById("retrievalInfo");
 
     //action="viewOwnedForms.html" 
     
     //newTable.setAttribute("id", ("Form # " + increment));
 
-    // let list = document.getElementById("retrievalInfo");
+   //let list = document.getElementById("retrievalInfo");
+
+   let theTable = document.getElementById("table");
     
-    // list.innerHTML="";
+   //list.innerHTML="";
     
     for (f of forms) {
-        // let item = document.createElement("li");
-        // item.innerHTML = f.userName;
-        // list.appendChild(item);
+        
+    	/*let item = document.createElement("li");
+         item.innerHTML = f.fullName;
+         list.appendChild(item);*/
 
-        let newTable = document.createElement(("Form # " + increment));
-        let row = newTable.insertRow(0);
+        
+        let row = theTable.insertRow(1);
 
         
         let cell0 = row.insertCell(0);
@@ -57,23 +60,33 @@ function createFormsList(forms) {
         let cell11 = row.insertCell(11);
         let cell12 = row.insertCell(12);
         let cell13 = row.insertCell(13);
-
-        cell0.innerHTML = f.RID;
+        let cell14 = row.insertCell(14);
+        let cell15 = row.insertCell(15);
+        let cell16 = row.insertCell(16);
+        let cell17 = row.insertCell(17);
+        
+        cell0.innerHTML = f.rid;
         cell1.innerHTML = f.userName;
         cell2.innerHTML = f.fullName;
-        cell3.innerHTML = f.theDate;
-        cell4.innerHTML = f.eventStartDate;
-        cell5.innerHTML = f.theLocation;
-        cell6.innerHTML = f.description;
-        cell7.innerHTML = f.theCost;
-        cell8.innerHTML = f.gradingFormat;
-        cell9.innerHTML = f.passingPercentage;
-        cell10.innerHTML = f.eventType;
-        cell11.innerHTML = f.reason;
-        cell12.innerHTML = f.fileName;
-        cell13.innerHTML = f.status;
-
-        increment++;
+        cell3.innerHTML = f.theDate.month;
+        cell4.innerHTML = f.theDate.dayOfMonth;
+        cell5.innerHTML = f.theDate.year;
+        cell6.innerHTML = f.eventStartDate.month;
+        cell7.innerHTML = f.eventStartDate.dayOfMonth;
+        cell8.innerHTML = f.eventStartDate.year;
+        cell9.innerHTML = f.theLocation;
+        cell10.innerHTML = f.description;
+        cell11.innerHTML = f.theCost;
+        cell12.innerHTML = f.gradingFormat;
+        cell13.innerHTML = f.passingPercentage;
+        cell14.innerHTML = f.eventType;
+        cell15.innerHTML = f.fileName;
+        cell16.innerHTML = f.status;
+        cell17.innerHTML = f.reason;
+        //newTable.appendChild(newTable);
+        //list.appendChild(newTable);
+        
+        //increment++;
     }
 
 }
@@ -97,7 +110,7 @@ function getAllForms() {
             document.getElementById("retrievalInfo").innerHTML = "Fetching Request";
         }
     }
-    xhr.open("GET", "viewOwnedForms", true);
+    xhr.open("GET", "ViewForms", true);
     xhr.send();
 
     //Redirect
