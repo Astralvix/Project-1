@@ -103,6 +103,7 @@ function getAllForms() {
         if (xhr.readyState === 4) {
             if (xhr.status === 200) {
                 createFormsList(JSON.parse(xhr.responseText));
+                document.getElementById("retrievalInfo").innerHTML = "Reimbursement forms recieved!";
             } else {
                 document.getElementById("retrievalInfo").innerHTML = "Failed to retireve forms";
             }
