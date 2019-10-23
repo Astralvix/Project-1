@@ -3,14 +3,37 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
+    <title>Form View</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='mainVOF.css'>
 </head>
 <body>
-    <p>
-        <text id="retrievalInfo"></text>
-    </p>
+    <div>
+        <table id="table" border="1" style="width:90%">
+            <tr>
+                <th>RID</th>
+                <th>Username</th>
+                <th>FullName</th>
+                <th>Month</th>
+                <th>Day</th>
+                <th>Year</th>
+                <th>EventStartMonth</th>
+                <th>EventStartDay</th>
+                <th>EventStartYear</th>
+                <th>Location</th>
+                <th>Description</th>
+                <th>Cost</th>
+                <th>GradingFormat</th>
+                <th>PassingPercentage</th>
+                <th>EventType</th>
+                <th>File</th>
+                <th>Status</th>
+                <th>Reason</th>
+            </tr>
+        </table>
+    </div>
+      <button onclick="getAllForms()" type="submit" class="btn btn-dark">Checker</button>
+      <text id="retrievalInfo"></text>
     <script src='JavaScript/viewForms.js'></script>
 </body>
 </html>

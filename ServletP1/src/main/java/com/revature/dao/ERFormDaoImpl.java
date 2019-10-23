@@ -59,10 +59,9 @@ private Connection conn = ConnectionFactory.getConnection();
 			form.setGradingFormat(rs.getString(9));
 			form.setPassingPercentage(rs.getString(10));
 			form.setEventType(rs.getString(11));
-			form.setReason(rs.getString(12));
-			form.setFileName(rs.getString(13));
-			form.setStatus(rs.getString(14));
-			
+			form.setFileName(rs.getString(12));
+			form.setStatus(rs.getString(13));
+			form.setReason(rs.getString(14));
 			allForms.add(form);
 		}
 		
@@ -82,8 +81,8 @@ private Connection conn = ConnectionFactory.getConnection();
 			
 			stmt.setString(1, form.getUserName());
 			stmt.setString(2, form.getFullName());
-			stmt.setObject(3, form.getTheDate());
-			stmt.setObject(4, form.getEventStartDate());
+			stmt.setDate(3, Date.valueOf(form.getTheDate()));
+			stmt.setDate(4, Date.valueOf(form.getEventStartDate()));
 			stmt.setString(5, form.getTheLocation());
 			stmt.setString(6, form.getDescription());
 			stmt.setDouble(7, form.getTheCost());
