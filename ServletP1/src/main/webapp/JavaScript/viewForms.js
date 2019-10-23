@@ -91,7 +91,7 @@ function createFormsList(forms) {
 
 }
 
-function getAllForms() {
+function getOwnedForms() {
 
     console.log("I was called");
 
@@ -112,6 +112,33 @@ function getAllForms() {
         }
     }
     xhr.open("GET", "ViewForms", true);
+    xhr.send();
+
+    //Redirect
+    //window.location = "http://localhost:8080/viewOwnedForms.html";
+}
+
+function getAllForms() {
+
+    console.log("I was called");
+
+    let xhr = new XMLHttpRequest();
+
+
+    //this will only run after open is called and the ready state is changed
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                createFormsList(JSON.parse(xhr.responseText));
+                document.getElementById("retrievalInfo").innerHTML = "Reimbursement forms recieved!";
+            } else {
+                document.getElementById("retrievalInfo").innerHTML = "Failed to retireve forms";
+            }
+        } else {
+            document.getElementById("retrievalInfo").innerHTML = "Fetching Request";
+        }
+    }
+    xhr.open("GET", "ViewAllForms", true);
     xhr.send();
 
     //Redirect
