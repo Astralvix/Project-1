@@ -6,25 +6,26 @@
     <title>Form View</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel='stylesheet' type='text/css' media='screen' href='mainVOF.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='VAF.css'>
 
     <style>
         table, td, th {
             border: 1px solid black;
-            width: 50%;
+            width: 10%;
             padding: 10%;
         }
         
         table {
             border-collapse: collapse;
-            background-color: rgb(244, 164, 96);
+            background-color: rgb(202, 96, 244);
         }
         
         th {
             height: 50px;
+            text-align: center;
         }
 
-        tr:hover {background-color: rgb(245, 175, 114);}
+        tr:hover {background-color: rgb(156, 4, 194);}
     </style>
 </head>
 <body class="page-backdrop">
@@ -35,8 +36,12 @@
                     <th>RID</th>
                     <th>Username</th>
                     <th>FullName</th>
-                    <th>Submission Date</th>
-                    <th>Course Start Date</th>
+                    <th>Month</th>
+                    <th>Day</th>
+                    <th>Year</th>
+                    <th>EventStartMonth</th>
+                    <th>EventStartDay</th>
+                    <th>EventStartYear</th>
                     <th>Location</th>
                     <th>Description</th>
                     <th>Cost</th>
@@ -50,8 +55,24 @@
             </thead>
         </table>
     </div>
-      <button onclick="getOwnedForms()" type="submit" class="btn btn-dark">Get My Forms</button>
+      <button onclick="getAllForms()" type="submit" class="btn btn-dark">Get All Forms</button>
       <text class="retrieval-text" id="retrievalInfo"></text>
+      <div>
+        <div style="overflow-x:auto;">
+            <table class="table" id="table1">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>RID#</th>
+                        <th>ManagerStatus</th>
+                        <th>DepartmentHeadStatus</th>
+                        <th>BenCoStatus</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <button onclick="getAllStatus()" type="submit" class="btn btn-dark">Get All Forms Status</button>
+        <text class="retrieval-text" id="retrievalInfo1"></text>
+      </div>
     <script src='JavaScript/viewForms.js'></script>
 </body>
 </html>
