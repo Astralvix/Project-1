@@ -16,4 +16,6 @@ public interface ERFormDao {
 	
 	//For employee, not managers
 	public void removeForm(ERForm form);
+	
+	public void updateStatusER(int r_id, String status, String reason);
 }

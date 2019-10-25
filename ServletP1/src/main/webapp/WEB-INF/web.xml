@@ -139,4 +139,24 @@
     <servlet-name>MFServlet</servlet-name>
     <url-pattern>/MFServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>StatusServlet</display-name>
+    <servlet-name>StatusServlet</servlet-name>
+    <servlet-class>com.revature.servlet.StatusServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>StatusServlet</servlet-name>
+    <url-pattern>/StatusServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>StatTableServlet</display-name>
+    <servlet-name>StatTableServlet</servlet-name>
+    <servlet-class>com.revature.servlet.StatTableServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>StatTableServlet</servlet-name>
+    <url-pattern>/statchecker</url-pattern>
+  </servlet-mapping>
 </web-app>
