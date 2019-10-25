@@ -109,4 +109,24 @@
     <servlet-name>ViewForms</servlet-name>
     <url-pattern>/ViewForms</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>MessageSubmissionServlet</display-name>
+    <servlet-name>MessageSubmissionServlet</servlet-name>
+    <servlet-class>com.revature.servlet.MessageSubmissionServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MessageSubmissionServlet</servlet-name>
+    <url-pattern>/handleMessage</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LogOutServlet</display-name>
+    <servlet-name>LogOutServlet</servlet-name>
+    <servlet-class>com.revature.servlet.LogOutServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LogOutServlet</servlet-name>
+    <url-pattern>/LogOutServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
