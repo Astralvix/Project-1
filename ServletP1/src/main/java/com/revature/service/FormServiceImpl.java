@@ -27,6 +27,12 @@ public class FormServiceImpl implements FormService{
 	public List<ERForm> myForms(String username) {
 		
 		return formDao.getMyForms(username);
+	}
+
+	@Override
+	public List<ERForm> getThemAll() {
+		// TODO Auto-generated method stub
+		return formDao.getAllForms();
 	}	
 	
 	

@@ -9,7 +9,7 @@ import java.util.List;
 
 import com.revature.pojo.StatusForm;
 import com.revature.util.ConnectionFactory;
-
+import static com.revature.util.LoggerUtil.*;
 public class StatusFormDaoImpl implements StatusFormDao{
 
 	private Connection conn = ConnectionFactory.getConnection();
@@ -59,6 +59,63 @@ public class StatusFormDaoImpl implements StatusFormDao{
 			e.printStackTrace();
 		}
 		return allStatForm;
+	}
+
+	@Override
+	public void updateStatusManager(int r_id, String status) {
+		// TODO Auto-generated method stub
+		String sql = "update project1.status set manager_status = ? where rid_status = ?;";
+		PreparedStatement stmt;
+		
+		try {
+			stmt = conn.prepareStatement(sql);
+			stmt.setString(1, status);
+			stmt.setInt(2, r_id);
+			stmt.executeUpdate();
+			info("Status for manager has been updated");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+
+	@Override
+	public void updateStatusDeptHead(int r_id, String status) {
+		// TODO Auto-generated method stub
+		String sql = "update project1.status set depthead_status = ? where rid_status = ?;";
+		PreparedStatement stmt;
+		
+		try {
+			stmt = conn.prepareStatement(sql);
+			stmt.setString(1, status);
+			stmt.setInt(2, r_id);
+			stmt.executeUpdate();
+			info("Status for depthead has been updated");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+
+	@Override
+	public void updateStatusBenCo(int r_id, String status) {
+		// TODO Auto-generated method stub
+		String sql = "update project1.status set benco_status = ? where rid_status = ?;";
+		PreparedStatement stmt;
+		
+		try {
+			stmt = conn.prepareStatement(sql);
+			stmt.setString(1, status);
+			stmt.setInt(2, r_id);
+			stmt.executeUpdate();
+			info("Status for benco has been updated");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 	
 

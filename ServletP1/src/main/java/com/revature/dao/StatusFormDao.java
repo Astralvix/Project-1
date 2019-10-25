@@ -12,4 +12,10 @@ public interface StatusFormDao {
 	
 	public List<StatusForm> getAllStat();
 	
+	public void updateStatusManager(int r_id, String status);
+	
+	public void updateStatusDeptHead(int r_id, String status);
+	
+	public void updateStatusBenCo(int r_id, String status);
+	
 }

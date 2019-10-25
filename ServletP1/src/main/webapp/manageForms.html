@@ -33,24 +33,20 @@
         <table class="table" id="table">
             <thead class="thead-dark">
                 <tr>
-                    <th>RID</th>
-                    <th>Username</th>
-                    <th>FullName</th>
-                    <th>Month</th>
-                    <th>Day</th>
-                    <th>Year</th>
-                    <th>EventStartMonth</th>
-                    <th>EventStartDay</th>
-                    <th>EventStartYear</th>
-                    <th>Location</th>
-                    <th>Description</th>
-                    <th>Cost</th>
-                    <th>GradingFormat</th>
-                    <th>PassingPercentage</th>
-                    <th>EventType</th>
-                    <th>File</th>
-                    <th>Status</th>
-                    <th>Reason</th>
+                        <th>RID</th>
+                        <th>Username</th>
+                        <th>FullName</th>
+                        <th>Submission Date</th>
+                        <th>Course Start Date</th>
+                        <th>Location</th>
+                        <th>Description</th>
+                        <th>Cost</th>
+                        <th>GradingFormat</th>
+                        <th>PassingPercentage</th>
+                        <th>EventType</th>
+                        <th>File</th>
+                        <th>Status</th>
+                        <th>Reason</th>
                 </tr>
             </thead>
         </table>
@@ -75,15 +71,14 @@
       </div>
       <div class="container">
         <h1 class="h1">Enter the RID of the request to handle</h1>
-        <form action="manageForms.html" method="POST">
+        <form action="statchecker" method="POST">
             <label class="requestNum" for="requestNumBox">RID #</label>
-            <input class="requestNumBox" type="text" name="requestuser" placeholder="Enter RID here" required/>
-            <div class="input-group-prepend">
-                <button class="btn btn-success" id="accept-button" name="accepted_button" value="accepted" type="button">Accept</button>
-                <button class="btn btn-danger" id="deny-button" name="rejected_button" value="rejected" type="button">Reject</button>
-            </div>
+            <input class="requestNumBox" type="number" name="requestuser" placeholder="Enter RID here" required/>  
             <textarea class="form-control" name="infomessage" id="infoText" rows="3" placeholder="Enter Reason Here" required></textarea>
-            <input type="submit" value="Submit"/>
+            <div class="input-group-prepend">
+                    <input type="submit" button class="btn btn-success" id="accept-button" name="accepted_button" value="accepted" type="button"></button>
+                    <input type="submit" button class="btn btn-danger" id="deny-button" name="rejected_button" value="rejected" type="button"></button>
+            </div>
         </form>
         </div>
       <form action="managementPage.html" method="POST">   

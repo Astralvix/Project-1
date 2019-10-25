@@ -51,13 +51,11 @@ function createAllStatusList(status) {
         let cell1 = row.insertCell(1);
         let cell2 = row.insertCell(2);
         let cell3 = row.insertCell(3);
-        let cell4 = row.insertCell(4);
         
-        cell0.innerHTML = s.msg_id;
-        cell1.innerHTML = s.sender_user;
-        cell2.innerHTML = s.rec_user;
-        cell3.innerHTML = s.messages;
-        cell4.innerHTML = s.date_sent; 
+        cell0.innerHTML = s.rid_status;
+        cell1.innerHTML = s.manager_stat;
+        cell2.innerHTML = s.deptHead_stat;
+        cell3.innerHTML = s.benCo_stat; 
     }
 }
 
@@ -194,7 +192,7 @@ function getAllForms() {
             document.getElementById("retrievalInfo").innerHTML = "Fetching Request";
         }
     }
-    xhr.open("GET", "ViewAllForms", true);
+    xhr.open("GET", "StatusServlet", true);
     xhr.send();
 }
 
@@ -222,6 +220,29 @@ function getRequests(){
     xhr.open("GET", "handleMessage", true);
     xhr.send();
 }
+function getRequestsMana(){
+
+    //console.log("I was called");
+
+    let xhr = new XMLHttpRequest();
+
+
+    //this will only run after open is called and the ready state is changed
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                createRequestsList(JSON.parse(xhr.responseText));
+                document.getElementById("retrievalInfo").innerHTML = "Requests recieved!";
+            } else {
+                document.getElementById("retrievalInfo").innerHTML = "Failed to retrieve requests";
+            }
+        } else {
+            document.getElementById("retrievalInfo").innerHTML = "Fetching Request";
+        }
+    }
+    xhr.open("GET", "MFServlet", true);
+    xhr.send();
+}
 
 
 function getAllFormsStatus() {
@@ -244,7 +265,7 @@ function getAllFormsStatus() {
             document.getElementById("retrievalInfo1").innerHTML = "Fetching Request";
         }
     }
-    xhr.open("GET", "ViewAllStatus", true);
+    xhr.open("GET", "statchecker", true);
     xhr.send();
 }
 
