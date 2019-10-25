@@ -40,7 +40,7 @@ public class ViewForms extends HttpServlet {
 		// TODO Auto-generated method stub
 		//IMPORTANT: leaves doGet method after a response is called.
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		
+		System.out.println("Inside viewforms");
 		HttpSession session = request.getSession();
 		ObjectMapper om = new ObjectMapper();
 		
@@ -49,6 +49,7 @@ public class ViewForms extends HttpServlet {
 		
 		List<ERForm> forms = FS.myForms(loggedInAs);
 		
+		response.setContentType("text/plain");
 		response.getWriter().write(om.writeValueAsString(forms));
 		
 //		RequestDispatcher rd = request.getRequestDispatcher("viewOwnedForms");

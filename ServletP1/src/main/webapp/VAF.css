@@ -1,0 +1,56 @@
+/* view all forms for manageForms.html */
+
+.page-backdrop {
+    background-image: url("https://66.media.tumblr.com/c80fc3fdb6ad7daf1d74a2cd31c57a09/tumblr_no43w7Piqw1uqr9h0o1_1280.gifv");
+    background-size: 100%;
+    background-position-y: 30%;
+}
+
+.retrieval-text {
+    color: whitesmoke;
+}
+
+
+/* #accept-button {
+    color: black;
+    background-color: #00ff44;
+}
+
+#deny-button {
+    color: black;
+    background-color: red;
+} */
+
+
+#infoText {
+    width: 100%;
+    color: whitesmoke;
+    background-color: transparent;
+    border-color: gray;
+}
+
+textarea {
+    color: whitesmoke;
+}
+
+.container {
+    margin-top: 10%;
+    background-color: #4a4a4a;
+    padding: 1%;
+    border-width:5px;  
+    border-style:double;
+}
+
+.h1 {
+    color:whitesmoke;
+}
+
+.requestNum {
+    color: whitesmoke;
+}
+
+
+.return {
+    position: relative;
+    margin-top: 10%;
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Form View</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel='stylesheet' type='text/css' media='screen' href='VAF.css'>
+
+    <style>
+        table, td, th {
+            border: 1px solid black;
+            width: 10%;
+            padding: 10%;
+        }
+        
+        table {
+            border-collapse: collapse;
+            background-color: rgb(202, 96, 244);
+        }
+        
+        th {
+            height: 50px;
+            text-align: center;
+        }
+
+        tr:hover {background-color: rgb(156, 4, 194);}
+    </style>
+</head>
+<body class="page-backdrop">
+    <div style="overflow-x:auto;">
+        <table class="table" id="table">
+            <thead class="thead-dark">
+                <tr>
+                        <th>RID</th>
+                        <th>Username</th>
+                        <th>FullName</th>
+                        <th>Submission Date</th>
+                        <th>Course Start Date</th>
+                        <th>Location</th>
+                        <th>Description</th>
+                        <th>Cost</th>
+                        <th>GradingFormat</th>
+                        <th>PassingPercentage</th>
+                        <th>EventType</th>
+                        <th>File</th>
+                        <th>Status</th>
+                        <th>Reason</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+      <button onclick="getAllForms()" type="submit" class="btn btn-dark">Get All Forms</button>
+      <text class="retrieval-text" id="retrievalInfo"></text>
+      <div>
+        <div style="overflow-x:auto;">
+            <table class="table" id="table1">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>RID#</th>
+                        <th>ManagerStatus</th>
+                        <th>DepartmentHeadStatus</th>
+                        <th>BenCoStatus</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <button onclick="getAllFormsStatus()" type="submit" class="btn btn-dark">Get All Forms Status</button>
+        <text class="retrieval-text" id="retrievalInfo1"></text>
+      </div>
+      <div class="container">
+        <h1 class="h1">Enter the RID of the request to handle</h1>
+        <form action="statchecker" method="POST">
+            <label class="requestNum" for="requestNumBox">RID #</label>
+            <input class="requestNumBox" type="number" name="requestuser" placeholder="Enter RID here" required/>  
+            <textarea class="form-control" name="infomessage" id="infoText" rows="3" placeholder="Enter Reason Here" required></textarea>
+            <div class="input-group-prepend">
+                    <input type="submit" button class="btn btn-success" id="accept-button" name="accepted_button" value="accepted" type="button"></button>
+                    <input type="submit" button class="btn btn-danger" id="deny-button" name="rejected_button" value="rejected" type="button"></button>
+            </div>
+        </form>
+        </div>
+      <form action="managementPage.html" method="POST">   
+        <div class="return">
+            <button type="submit" class="btn btn-dark">Return</button>
+        </div>  
+        </form>
+    <script src='JavaScript/viewForms.js'></script>
+</body>
+</html>

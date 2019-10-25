@@ -11,4 +11,6 @@ public interface FormService {
 
 	public List<ERForm> myForms(String username);
 	
+	public List<ERForm> getThemAll();
+	
 }

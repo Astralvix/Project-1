@@ -3,14 +3,60 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
+    <title>Form View</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel='stylesheet' type='text/css' media='screen' href='mainVOF.css'>
+
+    <style>
+        table, td, th {
+            border: 1px solid black;
+            width: 50%;
+            padding: 10%;
+        }
+        
+        table {
+            border-collapse: collapse;
+            background-color: rgb(244, 164, 96);
+        }
+        
+        th {
+            height: 50px;
+        }
+
+        tr:hover {background-color: rgb(245, 175, 114);}
+    </style>
 </head>
-<body>
-    <p>
-        <text id="retrievalInfo"></text>
-    </p>
+<body class="page-backdrop">
+    <div style="overflow-x:auto;">
+        <table class="table" id="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>RID</th>
+                    <th>Username</th>
+                    <th>FullName</th>
+                    <th>Submission Date</th>
+                    <th>Course Start Date</th>
+                    <th>Location</th>
+                    <th>Description</th>
+                    <th>Cost</th>
+                    <th>GradingFormat</th>
+                    <th>PassingPercentage</th>
+                    <th>EventType</th>
+                    <th>File</th>
+                    <th>Status</th>
+                    <th>Reason</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+      <button onclick="getOwnedForms()" type="submit" class="btn btn-dark">Get My Forms</button>
+      <text class="retrieval-text" id="retrievalInfo"></text>
+        <form action="home.html" method="GET">   
+            <div class="return">
+                <button type="submit" class="btn btn-dark">Return</button>
+            </div>  
+        </form>
     <script src='JavaScript/viewForms.js'></script>
 </body>
 </html>

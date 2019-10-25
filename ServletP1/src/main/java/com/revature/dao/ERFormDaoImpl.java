@@ -12,8 +12,8 @@ import java.util.List;
 import com.revature.pojo.ERForm;
 import com.revature.pojo.User;
 import com.revature.util.ConnectionFactory;
-
-public class ERFormDaoImpl implements ERFormDao{
+import static com.revature.util.LoggerUtil.*
+;public class ERFormDaoImpl implements ERFormDao{
 
 private Connection conn = ConnectionFactory.getConnection();
 	
@@ -24,7 +24,39 @@ private Connection conn = ConnectionFactory.getConnection();
 	@Override
 	public List<ERForm> getAllForms() {
 		// TODO Auto-generated method stub
-		return null;
+String sql = "select * from project1.reimbursementInfo;";
+		
+		PreparedStatement stmt;
+		
+		List<ERForm> allForms = new ArrayList<ERForm>();
+		
+		try {
+			stmt = conn.prepareStatement(sql);
+			ResultSet rs = stmt.executeQuery();
+			while(rs.next()) {
+				ERForm form = new ERForm();
+				form.setRID(rs.getInt(1));
+				form.setUserName(rs.getString(2));
+				form.setFullName(rs.getString(3));
+				form.setTheDate(rs.getDate(4).toLocalDate());
+				form.setEventStartDate(rs.getDate(5).toLocalDate());
+				form.setTheLocation(rs.getString(6));
+				form.setDescription(rs.getString(7));
+				form.setTheCost(rs.getDouble(8));
+				form.setGradingFormat(rs.getString(9));
+				form.setPassingPercentage(rs.getString(10));
+				form.setEventType(rs.getString(11));
+				form.setFileName(rs.getString(12));
+				form.setStatus(rs.getString(13));
+				form.setReason(rs.getString(14));
+				allForms.add(form);
+			}
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}return allForms;
 	}
 
 	@Override
@@ -59,10 +91,9 @@ private Connection conn = ConnectionFactory.getConnection();
 			form.setGradingFormat(rs.getString(9));
 			form.setPassingPercentage(rs.getString(10));
 			form.setEventType(rs.getString(11));
-			form.setReason(rs.getString(12));
-			form.setFileName(rs.getString(13));
-			form.setStatus(rs.getString(14));
-			
+			form.setFileName(rs.getString(12));
+			form.setStatus(rs.getString(13));
+			form.setReason(rs.getString(14));
 			allForms.add(form);
 		}
 		
@@ -82,8 +113,8 @@ private Connection conn = ConnectionFactory.getConnection();
 			
 			stmt.setString(1, form.getUserName());
 			stmt.setString(2, form.getFullName());
-			stmt.setObject(3, form.getTheDate());
-			stmt.setObject(4, form.getEventStartDate());
+			stmt.setDate(3, Date.valueOf(form.getTheDate()));
+			stmt.setDate(4, Date.valueOf(form.getEventStartDate()));
 			stmt.setString(5, form.getTheLocation());
 			stmt.setString(6, form.getDescription());
 			stmt.setDouble(7, form.getTheCost());
@@ -104,6 +135,27 @@ private Connection conn = ConnectionFactory.getConnection();
 	@Override
 	public void removeForm(ERForm form) {
 		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void updateStatusER(int r_id, String status, String reason) {
+		// TODO Auto-generated method stub
+		String sql="update project1.reimbursementInfo set status = ?, reason = ? where RID = ?;";
+		PreparedStatement stmt;
+		
+		try {
+			stmt = conn.prepareStatement(sql);
+			stmt.setString(1, status);
+			stmt.setString(2, reason);
+			stmt.setInt(3, r_id);
+			stmt.executeUpdate();
+			info("ERForm has been updated");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		
 	}
 

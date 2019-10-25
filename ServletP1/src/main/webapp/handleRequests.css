@@ -1,0 +1,41 @@
+.page-backdrop {
+    background-image: url("https://media1.tenor.com/images/3569342de6190d7e2e373832583e8e1d/tenor.gif");
+    background-size: 100%;
+    background-position-y: 30%;
+}
+
+.retrieval-text {
+    color: whitesmoke;
+}
+
+#infoText {
+    width: 100%;
+    color: whitesmoke;
+    background-color: transparent;
+    border-color: gray;
+}
+
+textarea {
+    color: whitesmoke;
+}
+
+.container {
+    margin-top: 10%;
+    background-color: #4a4a4a;
+    padding: 1%;
+    border-width:5px;  
+    border-style:double;
+}
+
+.h1 {
+    color:whitesmoke;
+}
+
+.requestNum {
+    color: whitesmoke;
+}
+
+.return {
+    position: relative;
+    margin-top: 7%;
+  }

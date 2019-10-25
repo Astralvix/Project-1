@@ -109,4 +109,54 @@
     <servlet-name>ViewForms</servlet-name>
     <url-pattern>/ViewForms</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>MessageSubmissionServlet</display-name>
+    <servlet-name>MessageSubmissionServlet</servlet-name>
+    <servlet-class>com.revature.servlet.MessageSubmissionServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MessageSubmissionServlet</servlet-name>
+    <url-pattern>/handleMessage</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LogOutServlet</display-name>
+    <servlet-name>LogOutServlet</servlet-name>
+    <servlet-class>com.revature.servlet.LogOutServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LogOutServlet</servlet-name>
+    <url-pattern>/LogOutServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>MFServlet</display-name>
+    <servlet-name>MFServlet</servlet-name>
+    <servlet-class>com.revature.servlet.MFServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MFServlet</servlet-name>
+    <url-pattern>/MFServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>StatusServlet</display-name>
+    <servlet-name>StatusServlet</servlet-name>
+    <servlet-class>com.revature.servlet.StatusServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>StatusServlet</servlet-name>
+    <url-pattern>/StatusServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>StatTableServlet</display-name>
+    <servlet-name>StatTableServlet</servlet-name>
+    <servlet-class>com.revature.servlet.StatTableServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>StatTableServlet</servlet-name>
+    <url-pattern>/statchecker</url-pattern>
+  </servlet-mapping>
 </web-app>
