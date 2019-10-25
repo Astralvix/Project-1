@@ -39,6 +39,28 @@ class FormsStatusPojo {
     }
 }
 
+function createAllStatusList(requests) {
+    let theTable = document.getElementById("table");
+
+    for (r of requests) {
+
+        let row = theTable.insertRow(1);
+
+        
+        let cell0 = row.insertCell(0);
+        let cell1 = row.insertCell(1);
+        let cell2 = row.insertCell(2);
+        let cell3 = row.insertCell(3);
+        let cell4 = row.insertCell(4);
+        
+        cell0.innerHTML = r.msg_id;
+        cell1.innerHTML = r.sender_user;
+        cell2.innerHTML = r.rec_user;
+        cell3.innerHTML = r.messages;
+        cell4.innerHTML = r.date_sent; 
+    }
+}
+
 function createRequestsList(requests) {
     let theTable = document.getElementById("table");
 
