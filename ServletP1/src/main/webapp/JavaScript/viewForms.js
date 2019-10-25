@@ -39,10 +39,10 @@ class FormsStatusPojo {
     }
 }
 
-function createAllStatusList(requests) {
-    let theTable = document.getElementById("table");
+function createAllStatusList(status) {
+    let theTable = document.getElementById("table1");
 
-    for (r of requests) {
+    for (s of status) {
 
         let row = theTable.insertRow(1);
 
@@ -53,11 +53,11 @@ function createAllStatusList(requests) {
         let cell3 = row.insertCell(3);
         let cell4 = row.insertCell(4);
         
-        cell0.innerHTML = r.msg_id;
-        cell1.innerHTML = r.sender_user;
-        cell2.innerHTML = r.rec_user;
-        cell3.innerHTML = r.messages;
-        cell4.innerHTML = r.date_sent; 
+        cell0.innerHTML = s.msg_id;
+        cell1.innerHTML = s.sender_user;
+        cell2.innerHTML = s.rec_user;
+        cell3.innerHTML = s.messages;
+        cell4.innerHTML = s.date_sent; 
     }
 }
 
@@ -249,26 +249,26 @@ function getAllFormsStatus() {
 }
 
 
-function getMyFormsStatus() {
+// function getMyFormsStatus() {
 
-    //console.log("I was called");
+//     //console.log("I was called");
 
-    let xhr = new XMLHttpRequest();
+//     let xhr = new XMLHttpRequest();
 
 
-    //this will only run after open is called and the ready state is changed
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState === 4) {
-            if (xhr.status === 200) {
-                createMyStatusList(JSON.parse(xhr.responseText));
-                document.getElementById("retrievalInfo").innerHTML = "Forms status recieved!";
-            } else {
-                document.getElementById("retrievalInfo").innerHTML = "Failed to retrieve forms status";
-            }
-        } else {
-            document.getElementById("retrievalInfo").innerHTML = "Fetching Request";
-        }
-    }
-    xhr.open("GET", "ViewStatus", true);
-    xhr.send();
-}
+//     //this will only run after open is called and the ready state is changed
+//     xhr.onreadystatechange = function() {
+//         if (xhr.readyState === 4) {
+//             if (xhr.status === 200) {
+//                 createMyStatusList(JSON.parse(xhr.responseText));
+//                 document.getElementById("retrievalInfo").innerHTML = "Forms status recieved!";
+//             } else {
+//                 document.getElementById("retrievalInfo").innerHTML = "Failed to retrieve forms status";
+//             }
+//         } else {
+//             document.getElementById("retrievalInfo").innerHTML = "Fetching Request";
+//         }
+//     }
+//     xhr.open("GET", "ViewStatus", true);
+//     xhr.send();
+// }

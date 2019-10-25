@@ -12,7 +12,7 @@
     width: 100%;
     color: whitesmoke;
     background-color: transparent;
-    border-color: rgba(27, 151, 223, 0.5);
+    border-color: gray;
 }
 
 textarea {
