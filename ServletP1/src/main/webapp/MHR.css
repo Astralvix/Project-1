@@ -1,7 +1,7 @@
-/* view all forms for manageForms.html */
+/* management handle requests */
 
 .page-backdrop {
-    background-image: url("https://66.media.tumblr.com/c80fc3fdb6ad7daf1d74a2cd31c57a09/tumblr_no43w7Piqw1uqr9h0o1_1280.gifv");
+    background-image: url("https://bigmemes.funnyjunk.com/gifs/16+bit+mountains+hasnt+been+posted+in+a+while+i_520423_5153923.gif");
     background-size: 100%;
     background-position-y: 30%;
 }
@@ -9,18 +9,6 @@
 .retrieval-text {
     color: whitesmoke;
 }
-
-
-/* #accept-button {
-    color: black;
-    background-color: #00ff44;
-}
-
-#deny-button {
-    color: black;
-    background-color: red;
-} */
-
 
 #infoText {
     width: 100%;
@@ -49,8 +37,7 @@ textarea {
     color: whitesmoke;
 }
 
-
 .return {
     position: relative;
-    margin-top: 10%;
-}
+    margin-top: 7%;
+  }
