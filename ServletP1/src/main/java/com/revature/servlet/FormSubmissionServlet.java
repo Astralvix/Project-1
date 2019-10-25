@@ -13,9 +13,13 @@ import javax.servlet.http.HttpSession;
 
 import com.revature.dao.ERFormDao;
 import com.revature.dao.ERFormDaoImpl;
+import com.revature.dao.StatusFormDao;
+import com.revature.dao.StatusFormDaoImpl;
 import com.revature.pojo.ERForm;
+import com.revature.pojo.StatusForm;
 import com.revature.service.FormService;
 import com.revature.service.FormServiceImpl;
+import static com.revature.util.LoggerUtil.*;
 
 /**
  * Servlet implementation class FormSubmissionServlet
@@ -24,6 +28,7 @@ public class FormSubmissionServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     private static FormService ERFS = new FormServiceImpl();
     private static ERFormDao ERFD = new ERFormDaoImpl();
+    private static StatusFormDao SFD = new StatusFormDaoImpl();
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -43,11 +48,10 @@ public class FormSubmissionServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		session.getAttribute("username");
 		if(session !=null ){
-			System.out.println("Inside the Submit Servlet");
+			trace("Inside the submit servlet");
 		response.getWriter().write("Inside The Submit Servlet");
 		System.out.println("We made it!");
 		ERForm form = new ERForm(); 
-		
 		String userName = session.getAttribute("username").toString(); //get username here
 		String fullName = request.getParameter("fullName");
 		LocalDate theDate = LocalDate.parse(request.getParameter("currentdate"));
@@ -68,7 +72,7 @@ public class FormSubmissionServlet extends HttpServlet {
 		  form.setEventType(eventType);
 		  form.setTheLocation(thelocation);
 		  form.setDescription(description);
-		  form.setTheCost( theCost); 
+		  form.setTheCost(theCost); 
 		  form.setFileName(fileName);
 		  form.setGradingFormat(gradingFormat);
 		  form.setPassingPercentage(passingPercentage);
@@ -77,6 +81,7 @@ public class FormSubmissionServlet extends HttpServlet {
 		if(check == true) {
 			System.out.println("There is a more than a week difference");
 			ERFD.createForm(form);
+			SFD.CreateStatForm();
 			response.sendRedirect("home.html");
 		}else {
 			System.out.println("There is less then a week difference");

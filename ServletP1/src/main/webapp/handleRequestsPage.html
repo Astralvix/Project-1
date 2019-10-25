@@ -43,11 +43,11 @@
       <button onclick="getOwnedForms()" type="submit" class="btn btn-dark">Get My Requests</button>
       <text class="retrieval-text" id="retrievalInfo"></text>
     <div class="container">
-        <h1 class="h1">Enter request # to handle and your message</h1>
-        <form action="handleRequest" method="POST">
-            <label class="requestNum" for="requestNumBox">Request #</label>
-            <input class="requestNumBox" type="text" name="request#" placeholder="enter request# here"/>
-            <textarea class="form-control" name="info" id="infoText" rows="3" placeholder="" required>Enter your message here</textarea>
+        <h1 class="h1">Enter a recipient user to send your message</h1>
+        <form action="handleMessage" method="POST">
+            <label class="requestNum" for="requestNumBox">Recipient Username</label>
+            <input class="requestNumBox" type="text" name="requestuser" placeholder="Enter recipient here" required/>
+            <textarea class="form-control" name="infomessage" id="infoText" rows="3" placeholder="Enter Message Here" required></textarea>
             <input type="submit" value="Send Message"/>
         </form>
     </div>
