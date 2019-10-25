@@ -79,7 +79,7 @@ function createRequestsList(requests) {
         cell1.innerHTML = r.sender_user;
         cell2.innerHTML = r.rec_user;
         cell3.innerHTML = r.messages;
-        cell4.innerHTML = r.date_sent; 
+        cell4.innerHTML = r.sendDate.month +"/"+r.sendDate.dayOfMonth +"/"+r.sendDate.year; 
     }
 }
 
@@ -199,7 +199,7 @@ function getAllForms() {
 }
 
 
-function getRequests() {
+function getRequests(){
 
     //console.log("I was called");
 
@@ -219,7 +219,7 @@ function getRequests() {
             document.getElementById("retrievalInfo").innerHTML = "Fetching Request";
         }
     }
-    xhr.open("GET", "ViewRequests", true);
+    xhr.open("GET", "handleMessage", true);
     xhr.send();
 }
 
