@@ -236,12 +236,12 @@ function getAllFormsStatus() {
         if (xhr.readyState === 4) {
             if (xhr.status === 200) {
                 createAllStatusList(JSON.parse(xhr.responseText));
-                document.getElementById("retrievalInfo").innerHTML = "Forms status recieved!";
+                document.getElementById("retrievalInfo1").innerHTML = "Forms status recieved!";
             } else {
-                document.getElementById("retrievalInfo").innerHTML = "Failed to retrieve forms status";
+                document.getElementById("retrievalInfo1").innerHTML = "Failed to retrieve forms status";
             }
         } else {
-            document.getElementById("retrievalInfo").innerHTML = "Fetching Request";
+            document.getElementById("retrievalInfo1").innerHTML = "Fetching Request";
         }
     }
     xhr.open("GET", "ViewAllStatus", true);

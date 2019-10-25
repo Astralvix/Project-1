@@ -70,17 +70,17 @@
                 </thead>
             </table>
         </div>
-        <button onclick="getAllStatus()" type="submit" class="btn btn-dark">Get All Forms Status</button>
+        <button onclick="getAllFormsStatus()" type="submit" class="btn btn-dark">Get All Forms Status</button>
         <text class="retrieval-text" id="retrievalInfo1"></text>
       </div>
       <div class="container">
         <h1 class="h1">Enter the RID of the request to handle</h1>
-        <form action="handleMessage" method="POST">
+        <form action="manageForms.html" method="POST">
             <label class="requestNum" for="requestNumBox">RID #</label>
             <input class="requestNumBox" type="text" name="requestuser" placeholder="Enter RID here" required/>
             <div class="input-group-prepend">
-                <button class="btn btn-success" id="accept-button" type="button">Accept</button>
-                <button class="btn btn-danger" id="deny-button" type="button">Deny</button>
+                <button class="btn btn-success" id="accept-button" name="accepted_button" value="accepted" type="button">Accept</button>
+                <button class="btn btn-danger" id="deny-button" name="rejected_button" value="rejected" type="button">Reject</button>
             </div>
             <textarea class="form-control" name="infomessage" id="infoText" rows="3" placeholder="Enter Reason Here" required></textarea>
             <input type="submit" value="Submit"/>
