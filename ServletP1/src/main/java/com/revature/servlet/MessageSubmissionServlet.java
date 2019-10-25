@@ -2,6 +2,7 @@ package com.revature.servlet;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -9,9 +10,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.revature.dao.MessageFormDao;
 import com.revature.dao.MessageFormDaoImpl;
 import com.revature.pojo.MessageForm;
+import com.revature.service.MessageService;
+import com.revature.service.MessageServiceImpl;
+
 import static com.revature.util.LoggerUtil.*;
 
 /**
@@ -19,7 +24,8 @@ import static com.revature.util.LoggerUtil.*;
  */
 public class MessageSubmissionServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    private static MessageFormDao MFD = new MessageFormDaoImpl();   
+    private static MessageFormDao MFD = new MessageFormDaoImpl();
+    private static MessageService MSS = new MessageServiceImpl();
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -33,7 +39,16 @@ public class MessageSubmissionServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		info("Inside Message Submit Page");
+		HttpSession session = request.getSession();
+		ObjectMapper om = new ObjectMapper();
+		String loggedInAs;
+		loggedInAs = session.getAttribute("username").toString();
+		
+		List<MessageForm> msgForm = MSS.myMsgs(loggedInAs);
+		
+		response.setContentType("text/plain");
+		response.getWriter().write(om.writeValueAsString(msgForm));
 	}
 
 	/**
