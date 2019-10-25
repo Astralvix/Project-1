@@ -129,4 +129,14 @@
     <servlet-name>LogOutServlet</servlet-name>
     <url-pattern>/LogOutServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>MFServlet</display-name>
+    <servlet-name>MFServlet</servlet-name>
+    <servlet-class>com.revature.servlet.MFServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MFServlet</servlet-name>
+    <url-pattern>/MFServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
