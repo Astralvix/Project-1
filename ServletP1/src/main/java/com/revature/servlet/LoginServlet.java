@@ -10,6 +10,7 @@ import javax.servlet.http.HttpSession;
 import com.revature.pojo.User;
 import com.revature.service.UserService;
 import com.revature.service.UserServiceImpl;
+import static com.revature.util.LoggerUtil.*;
 
 /**
  * Servlet implementation class LoginServlet
@@ -48,10 +49,16 @@ public class LoginServlet extends HttpServlet {
 		User user = US.loginUser(username, password);
 		HttpSession session;
 		if(user!=null) {
-			System.out.println("Login Servlet");
+			info("Inside Login Servlet");
 			session = request.getSession(true);
 			session.setAttribute("username", user.getUser());
-			response.sendRedirect("home.html");	
+			if(user.getRole().equals("employee")) {
+			
+				response.sendRedirect("home.html");
+			}else if(user.getRole().equals("manager") || user.getRole().equals("depthead") || user.getRole().equals("benco")) {
+				response.sendRedirect("managementPage.html");
+			}
+				
 		}
 		else {
 			response.sendRedirect("loginPage.html");
