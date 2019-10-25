@@ -13,15 +13,18 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import com.revature.dao.ERFormDaoImpl;
+import com.revature.dao.MessageFormDaoImpl;
 import com.revature.pojo.ERForm;
+import com.revature.pojo.MessageForm;
 
 import org.junit.*;
 public class ServletTest {
 	
 	public static final ERFormDaoImpl formDaoImpl = new ERFormDaoImpl();
+	public static final MessageFormDaoImpl msgFormDaoImpl = new MessageFormDaoImpl();
 	
+	private List<MessageForm> messageForm = new ArrayList();
 	private List<ERForm> ERFormList = new ArrayList<ERForm>();
-	private LocalDate testDate; 
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -40,9 +43,15 @@ public class ServletTest {
 	}
 
 	@Test
-	public void getERFormsByErik() {
-		ERFormList.add(new ERForm(0, "test", "test", date, , null, null, 0, null, null, null, null, null, null));
-		assertEquals(ERFormList, formDaoImpl.getMyForms("testUser"));
+	public void getERFormsByTestUser() {
+		ERFormList.add(new ERForm(4, "test", "test", LocalDate.of(2019, 10, 01), LocalDate.of(2019, 10, 31), "test", "test", 1.0, "100%-90%", "1", "test", "", "", "pending"));
+		assertEquals(ERFormList, formDaoImpl.getMyForms("test"));
+	}
+	
+	@Test
+	public void getMessagesForTestUser() {
+		messageForm.add(new MessageForm());
+		assertEquals(messageForm, msgFormDaoImpl.getMyMsg("test"));
 	}
 
 }
