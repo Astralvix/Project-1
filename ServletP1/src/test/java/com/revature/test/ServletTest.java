@@ -50,7 +50,7 @@ public class ServletTest {
 	
 	@Test
 	public void getMessagesForTestUser() {
-		messageForm.add(new MessageForm());
+		messageForm.add(new MessageForm(2, "testManager", "test", "testing", LocalDate.of(2019, 10, 24)));
 		assertEquals(messageForm, msgFormDaoImpl.getMyMsg("test"));
 	}
 
